@@ -1,14 +1,10 @@
 # Empirical Bayes Variational Autoencoders: Excess Risk Bound
 
-## Overview
-This repository contains code and experiments related to **Empirical Bayes Variational Autoencoders (EBVAEs)**, an extension of conventional VAEs that optimizes the **latent prior’s covariance matrix** to enhance sample quality and reconstruction. Our work is based on the theoretical framework established by **Tang and Yang (2021)**, which provides **excess risk bounds** for EBVAEs, offering insights into their statistical guarantees.
-
 ## Objectives
-We aim to **validate the theoretical and empirical advantages** of EBVAEs by:
-- Implementing **Empirical Bayes Variational Autoencoders (EBVAEs)**
-- Comparing them with **standard VAEs** using the **MNIST** dataset
-- Analyzing the **impact of learning a full covariance matrix** in the latent space
+This repository contains code and experiments relating to Empirical Bayes Variational Autoencoders (EBVAEs), an extension of conventional VAEs that aims to learn a more flexible latent prior. Our work follows the theoretical framework of Tang and Yang (2021), focusing on how learning the covariance matrix of the latent space can enhance sample quality and reconstruction.
 
+## Goal
+We seek to demonstrate the theoretical and empirical advantages of EBVAEs by examining their excess risk bounds and measuring their ability to produce clearer, higher-quality samples. We center our efforts on the MNIST dataset to investigate how optimizing the latent covariance and decoder’s noise parameter impacts overall performance.
 
 ## Experiments
 We test the effectiveness of EBVAEs through:
