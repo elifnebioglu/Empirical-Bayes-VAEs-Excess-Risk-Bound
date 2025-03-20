@@ -1,30 +1,42 @@
-# Project based on the paper "On Empirical Bayes Variational Autoencoder: An Excess Risk Bound"
+# Empirical Bayes Variational Autoencoders: Excess Risk Bound
+
+## Overview
+This repository contains code and experiments related to **Empirical Bayes Variational Autoencoders (EBVAEs)**, an extension of conventional VAEs that optimizes the **latent prior’s covariance matrix** to enhance sample quality and reconstruction. Our work is based on the theoretical framework established by **Tang and Yang (2021)**, which provides **excess risk bounds** for EBVAEs, offering insights into their statistical guarantees.
 
 ## Objectives
-This repository contains the implementation and experimental results related to Empirical Bayes Variational Autoencoders (EBVAEs), a generalization of traditional VAEs aimed at improving latent space representation by learning a more flexible prior distribution. Our work is inspired by the theoretical framework introduced by Tang and Yang (2021) and extends their findings through empirical evaluation.
+We aim to **validate the theoretical and empirical advantages** of EBVAEs by:
+- Implementing **Empirical Bayes Variational Autoencoders (EBVAEs)**
+- Comparing them with **standard VAEs** using the **MNIST** dataset
+- Analyzing the **impact of learning a full covariance matrix** in the latent space
 
-## Goal
-Our goal is to explore the theoretical and empirical advantages of **Empirical Bayes Variational Autoencoders (EBVAEs)** by analyzing their excess risk bounds and evaluating their performance in generating high-quality samples with optimized latent space representations.
-
-## Features
-- Implementation of **Empirical Bayes VAEs (EBVAEs)**
-- Comparison with standard VAEs on the **MNIST** and **Fashion-MNIST** datasets
-- Evaluation of excess risk bounds and empirical performance
-- Analysis of the impact of optimizing the covariance matrix of the latent distribution
 
 ## Experiments
-We test the effectiveness of **Empirical Bayes VAEs (EBVAEs)** by:
-- Training EBVAEs and standard VAEs on MNIST and Fashion-MNIST datasets.
-- Evaluating model performance based on **log-likelihood, FID scores**, and **sample quality**.
-- Analyzing whether learning the full covariance matrix of the latent distribution improves generation quality.
+We test the effectiveness of EBVAEs through:
+- Training **four different models** on MNIST:
+  1. **Standard VAE**
+  2. **VAE with learned covariance matrix**
+  3. **VAE with learned noise parameter**
+  4. **VAE with both learned covariance and noise parameter**
+- Evaluating performance in terms of:
+  - **Reconstruction loss**
+  - **KL divergence**
+  - **EBVAE loss**
+  - **Generated sample quality**
+- **Investigating whether a more expressive latent prior** improves generative quality
 
 ## Results
+Our findings suggest:
+- **Learning the covariance matrix** slightly improves KL divergence but may **deregularize the latent space**
+- **Learning the noise parameter** enhances **reconstruction loss** and **EBVAE loss**
+- **Joint optimization of covariance and noise** requires careful balancing to avoid unstable training
+- The standard VAE **still outperforms** in terms of generated sample **diversity and accuracy**
+
 
 ## References
 - Tang, R., & Yang, Y. (2021). *On Empirical Bayes Variational Autoencoder: An Excess Risk Bound*. **Conference on Learning Theory (COLT)**.
+- Grünwald, P. D., & Mehta, N. A. (2020). *Fast rates for general unbounded loss functions: From ERM to generalized Bayes*. **Journal of Machine Learning Research**.
+- Bartlett, P. L., Bousquet, O., & Mendelson, S. (2005). *Local Rademacher complexities*.
 
 ## Contributors
-- **Elif Nebioglu** (ENS Paris Saclay)
-- **Liam Ludington** (ENS Paris Saclay)
-
-
+- **Liam Ludington** (ENS Paris-Saclay)
+- **Elif Nebioglu** (ENS Paris-Saclay)
